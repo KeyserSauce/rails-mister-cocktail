@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row text-center">
+    <h2>
+    <strong>Name:</strong>
+    <%= @cocktail.name %>
+    </h2>
+  <%= image_tag "http://www.placecage.com/c/300/300", {class: "img-circle", id: "logo"}%>
+
+
+  <h3>Ingredients:</h3>
+  <% @doses.each do |dose| %>
+    <tr>
+      <li><%= dose.ingredient.name %> <%= dose.description %> <%= link_to "Delete dose", dose_path(dose), method: :delete %> </li>
+    </tr>
+  <% end %>
+  <%= link_to "back to overview", cocktails_path, {class: "btn btn-primary"} %>
+  <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), {class: "btn btn-success"}  %>
+
+  </div>
+</div>

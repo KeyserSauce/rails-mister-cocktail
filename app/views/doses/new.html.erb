@@ -1,0 +1,18 @@
+
+<div class="container">
+  <div class="row col-sm-offset-4 col-sm-4">
+    <h1>New Dose:</h1>
+
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+
+      <%= f.input :ingredient, collection: Ingredient.all, prompt: "Pick one" %>
+      <%= f.input :description%>
+
+
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

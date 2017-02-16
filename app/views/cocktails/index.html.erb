@@ -1,0 +1,20 @@
+<h1 class ="text-center">Welcome to fabulous cocktail recipes!</h1>
+
+
+<div class="container">
+  <%= link_to 'Add a recipe', new_cocktail_path, {class: "btn btn-primary"} %>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail do %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.placecage.com/c/600/400');">
+            <div class="card-category"><%= cocktail.name %></div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
